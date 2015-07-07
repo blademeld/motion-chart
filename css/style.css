@@ -21,11 +21,6 @@ div.left{
 	width:20%;
 }
 
-div.mini_map{
-	margin: 2px auto;
-	overflow:hidden;
-}
-
 div.content{
 	float:right;
 	width:880px;
@@ -40,4 +35,14 @@ div.country_select{
 
 .nav_control{
 	z-index:100;
+}
+
+div.mm_js{
+	width: 270px;
+	height: 170px;
+	padding: 10px;
+}
+
+div.mw_js{
+	height: 500px;
 }

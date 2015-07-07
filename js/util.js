@@ -4,6 +4,9 @@ function init(){
 		active:false
 	});
 	$( "div.content" ).tabs();
+	
+	mamMapInit();
+	wamMapInit();
 
 	//use AJAX to fetch country list
 	//format should be name, id(ISO), continent, GDP[], population[]
@@ -110,4 +113,70 @@ function onContinentClick(continent){
 	//accordion.continent.open
 	//uncheck all
 	//check all in accordion.continent
+}
+
+function mamMapInit() {
+	// create AmMap object
+	var map = new AmCharts.AmMap();
+	// set path to images
+	map.pathToImages = "ammap/mgImg/";
+
+	/* create data provider object
+	 map property is usually the same as the name of the map file.
+
+	 getAreasFromMap indicates that amMap should read all the areas available
+	 in the map data and treat them as they are included in your data provider.
+	 in case you don't set it to true, all the areas except listed in data
+	 provider will be treated as unlisted.
+	*/
+	map.dataProvider = {
+		map: "continentsLow",
+		getAreasFromMap:true                    
+	}; 
+	// pass data provider to the map object
+	//map.dataProvider = dataProvider;
+
+	/* create areas settings
+	 * autoZoom set to true means that the map will zoom-in when clicked on the area
+	 * selectedColor indicates color of the clicked area.
+	 */
+	map.areasSettings = {
+		color: "#666",
+		autoZoom: true,
+		//selectedColor: "#CC0000"
+	};
+	
+	map.zoomControl = {
+		buttonSize: 0,
+		zoomControlEnabled: false
+	}
+
+	// let's say we want a small map to be displayed, so let's create it
+	//map.smallMap = new AmCharts.SmallMap();
+
+	// write the map to container div
+	map.write("mm_js");
+}
+
+function wamMapInit() {
+	var map = new AmCharts.AmMap();
+	map.pathToImages = "ammap/images/";
+
+	map.dataProvider = {
+		map: "worldLow",
+		getAreasFromMap:true                    
+	}; 
+	
+	map.areasSettings = {
+		color: "#666",
+		selectedColor: "#DDDDDD"
+	};
+	
+	map.zoomControl = {
+		homeIconColor: "#abcabc",
+		gridColor: "#abcabc",
+		gridBackgroundColor: '#abcabc'
+	}
+	
+	map.write("mw_js");
 }

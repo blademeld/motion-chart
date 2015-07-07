@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-	<title>Motion-Chart</title>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="jQueryUI/css/jquery-ui.css"/>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Motion Chart</title>
+	
+	<!-- jquery import -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+	<!-- custom import -->
 	<script src="js/util.js"></script>
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	<!-- jquery-ui import -->
 	<script src="jQueryUI/js/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jQueryUI/css/jquery-ui.css"/>
+	
+	<!-- tutorial http://www.amcharts.com/tutorials/your-first-ammap/ -->
+	<!-- ammap import ref. http://docs.amcharts.com/javascriptmaps/AmMap -->
+	<script src="ammap/ammap.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
+	
+	<!-- amchart import ref. http://docs.amcharts.com/javascriptcharts/AmChart -->
+	<script src="amcharts/amcharts.js" type="text/javascript"></script>
+	<script src="libs/serial.js" type="text/javascript"></script>
+	<script src="libs/xy.js" type="text/javascript"></script>
+	
+	<!-- http://www.amcharts.com/tutorials/your-first-ammap/ 
+	
+		In case you are using our amcharts js file in the same page, 
+		you can insert ammap_amcharts_extension.js instead of ammap.js – 
+		this will save you ~50 kilobytes. Remember, you have to insert 
+		ammap_amcharts_extension.js  after amcharts.js file!
+	-->
+	
+	<!-- amstockchart import ref. http://docs.amcharts.com/javascriptstockchart/AmCharts -->
+<!--	<script src="amstockcharts/amcharts.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="amstockcharts/style.css" type="text/css" media="all" />	-->
+	
+	<!-- selecting the maps to use -->
+	<script src="ammap/maps/js/continentsLow.js" type="text/javascript"></script>
+	<script src="ammap/maps/js/worldLow.js" type="text/javascript"></script>
+	
 	<script>
 		$(function(){
 			init();
@@ -16,13 +51,7 @@
 <body>
 <div class='wrapper'>
 	<div class='left'>
-		<div class='mini_map'>
-			<div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 290px; height: 190px;">
-				<svg style="position: absolute; width: 290px; height: 190px; left: -0.299988px;" version="1.1"></svg>
-			</div>
-			<!--<img src='' alt='magnifying glass' onclick='obj_place($("div.mm_ph"), 0, 0)' class='nav_control'/>
-			<div class='mm_ph'>bleh</div>-->
-		</div>
+		<div id="mm_js" class='mm_js'></div>
 		<div class='leftmenu'>
 			<h3>Africa</h3>
 			<div id='africa' class='country_select'>
@@ -50,10 +79,10 @@
 			<li><a href="#tabs-2">Map</a></li>
 		</ul>
 		<div id="tabs-1">
-			content 1
+			<div id='wchart' class='wchart'></div>
 		</div>
 		<div id="tabs-2">
-			content 2
+			<div id="mw_js" class='mw_js'></div>
 		</div>
 	</div>
 </div>
