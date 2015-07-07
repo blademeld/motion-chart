@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title>Motion-Chart</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="jQueryUI/css/jquery-ui.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="jQueryUI/js/jquery-ui.js"></script>
+	<script>
+		$(function(){
+			init();
+		})
+	</script>
+</head>
+<body>
+<div class='wrapper'>
+	<div class='left'>
+		<div class='mini_map'>
+			<div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 290px; height: 190px;">
+				<svg style="position: absolute; width: 290px; height: 190px; left: -0.299988px;" version="1.1"></svg>
+			</div>
+			<!--<img src='' alt='magnifying glass' onclick='obj_place($("div.mm_ph"), 0, 0)' class='nav_control'/>
+			<div class='mm_ph'>bleh</div>-->
+		</div>
+		<div class='leftmenu'>
+			<h3>Africa</h3>
+			<div id='africa' class='country_select'>
+			</div>
+			<h3>Europe</h3>
+			<div id='europe' class='country_select'>
+			</div>
+			<h3>Asia</h3>
+			<div id='asia' class='country_select'>
+			</div>
+			<h3>North America</h3>
+			<div id='nAmerica' class='country_select'>
+			</div>
+			<h3>South America</h3>
+			<div id='sAmerica' class='country_select'>
+			</div>
+			<h3>Australia and Oceania</h3>
+			<div id='oceania' class='country_select'>
+			</div>
+		</div>
+	</div>
+	<div class='content'>
+		<ul>
+			<li><a href="#tabs-1">Chart</a></li>
+			<li><a href="#tabs-2">Map</a></li>
+		</ul>
+		<div id="tabs-1">
+			content 1
+		</div>
+		<div id="tabs-2">
+			content 2
+		</div>
+	</div>
+</div>
+</body>
+</html>

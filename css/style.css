@@ -1,0 +1,43 @@
+body{
+	background: grey;
+	font-family: arial;
+}
+
+div.wrapper{
+	background:black;
+	color:white;
+	min-height:600px;
+	width: 60%;
+	min-width: 1200px;
+	margin: 0 auto;
+    margin-top: 70px;
+	padding: 5px;
+	border-radius: 15px;
+}
+
+div.left{
+	float:left;
+	min-width:300px;
+	width:20%;
+}
+
+div.mini_map{
+	margin: 2px auto;
+	overflow:hidden;
+}
+
+div.content{
+	float:right;
+	width:880px;
+	min-height:580px;
+}
+
+div.country_select{
+    min-width: 150px;
+    height: 150px;
+    overflow: scroll;
+}
+
+.nav_control{
+	z-index:100;
+}
